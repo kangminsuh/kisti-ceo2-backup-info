@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="KISTI-CeO2-Backup의 Google Drive 접근, 이용, 보관 및 삭제 안내">
+  <title>개인정보처리방침 | KISTI-CeO2-Backup</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #172534; background: #f4f7fa; }
+    body { margin: 0; line-height: 1.85; }
+    main { max-width: 760px; margin: 48px auto; padding: 32px; background: white; border: 1px solid #dce3ea; border-radius: 12px; }
+    h1 { line-height: 1.3; font-size: clamp(1.7rem, 5vw, 2.2rem); }
+    h2 { font-size: 1.2rem; margin-top: 2rem; }
+    a { color: #145b9d; text-underline-offset: 3px; overflow-wrap: anywhere; }
+    a:focus-visible { outline: 3px solid #145b9d; outline-offset: 4px; }
+    code { overflow-wrap: anywhere; }
+    footer { color: #526273; border-top: 1px solid #dce3ea; margin-top: 32px; padding-top: 20px; font-size: .95rem; }
+    @media (max-width: 600px) { main { margin: 12px; padding: 22px; } }
+  </style>
+</head>
+<body>
+<main>
+  <nav aria-label="페이지 이동"><a href="index.html">앱 안내</a></nav>
+  <h1>개인정보처리방침</h1>
+  <p><strong>KISTI-CeO2-Backup</strong><br>문서 작성일: 2026년 11월 4일</p>
+  <p>본 도구는 서강민(Kangmin Suh)이 본인의 연구 파일 전송과 백업을 위해 관리하는 개인용 rclone OAuth 클라이언트입니다. 이 방침은 해당 도구의 Google Drive 데이터 처리에 적용됩니다.</p>
+  <h2>1. 접근하는 정보와 목적</h2>
+  <p>파일 복사와 무결성 검증을 위해 Google Drive의 파일 내용, 이름, 식별자, 폴더 구조, 파일 크기, 수정 시각 및 제공되는 체크섬 등 메타데이터를 처리합니다. Google이 발급하는 OAuth 접근 토큰과 갱신 토큰은 인증된 접근을 유지하는 데 사용합니다.</p>
+  <h2>2. 권한과 이용 범위</h2>
+  <p>현재 사용하는 권한은 <code>https://www.googleapis.com/auth/drive</code>입니다. 이 권한은 일반 Drive 파일의 조회·생성·수정·삭제를 허용합니다. 운영자는 연구용 경로를 지정하여 필요한 전송 명령을 실행합니다. 작업 폴더 설정 자체가 OAuth 권한을 해당 폴더로 제한하지는 않습니다.</p>
+  <p>현재 백업 절차는 파일 복사와 전송 결과 비교입니다. 파일 변경과 삭제 여부는 실행하는 rclone 명령에 따라 결정됩니다.</p>
+  <h2>3. 저장 및 전송</h2>
+  <p>선택한 파일은 운영자의 Google Drive와 본인에게 배정된 KISTI 저장공간 사이에서 전송됩니다. 작업에 따라 운영자의 개인 컴퓨터에 사본이 저장될 수 있습니다. 토큰은 rclone을 실행하는 환경의 접근이 제한된 사용자 설정 파일에 보관합니다. Google API와의 통신에는 HTTPS를 사용합니다.</p>
+  <p>전송 기록에는 파일명, 경로, 크기, 시각, 오류 정보 및 체크섬이 포함될 수 있습니다. 파일 보관과 서비스 운영에는 Google 및 KISTI 등 실제 이용하는 서비스 제공자의 정책이 함께 적용됩니다.</p>
+  <h2>4. 공유 및 부가 이용</h2>
+  <p>이 도구는 연구 파일 백업을 위해 사용되며, 데이터를 판매하거나 광고 목적으로 이용하지 않습니다. 이 도구 자체는 Google 사용자 데이터를 범용 인공지능 모델 학습에 이용하지 않습니다. 파일을 공개하려면 운영자가 별도로 공유 작업을 수행해야 합니다.</p>
+  <p>이 안내 웹페이지에는 로그인 입력란, 분석 스크립트 또는 추적 쿠키를 추가하지 않습니다. 페이지를 제공하는 호스팅 업체는 서비스 운영을 위해 자체 접속 기록을 처리할 수 있습니다.</p>
+  <h2>5. 보관, 삭제 및 권한 철회</h2>
+  <p>연구 파일과 백업 사본은 운영자가 보관 목적에 따라 관리하며, 저장 서비스의 보존·삭제 정책도 적용됩니다. 특히 계산 서버의 임시 저장공간은 영구 보존 장소로 간주하지 않습니다.</p>
+  <p><a href="https://myaccount.google.com/connections">Google 계정의 외부 앱 연결 관리</a>에서 앱 접근 권한을 철회할 수 있습니다. 권한 철회는 이미 복사된 파일을 자동으로 삭제하지 않습니다. 사용을 끝낼 때는 각 저장 위치의 불필요한 사본과 로컬 rclone 인증 설정을 별도로 삭제합니다. 삭제 관련 문의는 아래 연락처로 할 수 있습니다.</p>
+  <h2>6. Google API 사용자 데이터 정책</h2>
+  <p>본 도구는 Google API에서 받은 정보의 사용과 전송에 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>의 Limited Use 요건을 적용합니다. 데이터 처리 목적이나 범위가 바뀌면 이 방침을 갱신하고 필요한 동의를 받은 후 적용합니다.</p>
+  <h2>7. 운영자 및 문의</h2>
+  <p>서강민(Kangmin Suh)<br><a href="mailto:ilksh98@gmail.com">ilksh98@gmail.com</a></p>
+  <footer>개인 연구용 도구에 대한 안내입니다. KISTI 또는 Google의 공식 개인정보처리방침을 대신하지 않습니다.</footer>
+</main>
+</body>
+</html>
